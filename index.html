@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>BRBL — Built for the iron.</title>
+<meta name="description" content="BRBL is the gym tracker built around real equipment. 1,580 exercises across 43 brands — Panatta, Watson, Life Fitness, Technogym and more."/>
+<meta property="og:title" content="BRBL — Built for the iron."/>
+<meta property="og:description" content="The only gym tracker that knows your gym's actual machines. 1,580 exercises. 43 equipment brands."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://brbl.app"/>
+<meta name="theme-color" content="#171615"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23171615'/%3E%3Ccircle cx='32' cy='32' r='25' fill='%23e2dbcc'/%3E%3Ccircle cx='32' cy='32' r='21' fill='none' stroke='%239e988c' stroke-width='1.5'/%3E%3Ccircle cx='32' cy='32' r='7.5' fill='%23d8dadd'/%3E%3Ccircle cx='32' cy='32' r='2.8' fill='%23262a2d'/%3E%3C/svg%3E"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap');
+:root{
+  --char:#171615; --char-2:#1f1e1c; --char-3:#262523;
+  --bone:#e6dfd0; --bone-dim:#a39d8e; --bone-faint:#6d675c;
+  --steel:#d8dadd; --line:rgba(230,223,208,.12);
+  --fd:'Barlow Condensed',sans-serif; --fb:'Barlow',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--char);color:var(--bone);font-family:var(--fb);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ── Nav ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(23,22,21,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-mark{font-family:var(--fd);font-weight:800;font-size:22px;letter-spacing:.28em;text-decoration:none}
+.nav-cta{font-family:var(--fd);font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid var(--bone);padding:8px 20px;border-radius:999px;transition:background .2s,color .2s}
+.nav-cta:hover{background:var(--bone);color:var(--char)}
+
+/* ── Hero ── */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:110px 24px 60px;position:relative;overflow:hidden}
+.plate{width:min(46vw,340px);height:auto;margin-bottom:38px;filter:drop-shadow(0 30px 60px rgba(0,0,0,.55))}
+@media(prefers-reduced-motion:no-preference){
+  .plate{animation:settle 1.1s cubic-bezier(.2,.9,.3,1) both}
+  @keyframes settle{from{opacity:0;transform:translateY(-26px) rotate(-8deg)}to{opacity:1;transform:none}}
+  .hero h1,.hero .tag,.hero .cta-row{animation:rise .8s ease-out both}
+  .hero .tag{animation-delay:.15s}.hero .cta-row{animation-delay:.3s}
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+}
+.hero h1{font-family:var(--fd);font-weight:800;font-size:clamp(64px,13vw,150px);letter-spacing:.14em;text-indent:.14em;line-height:.95}
+.hero .tag{font-family:var(--fd);font-weight:600;font-size:clamp(17px,2.6vw,24px);letter-spacing:.3em;text-transform:uppercase;color:var(--bone-dim);margin-top:14px}
+.cta-row{display:flex;gap:14px;margin-top:42px;flex-wrap:wrap;justify-content:center}
+.btn{font-family:var(--fd);font-weight:700;font-size:17px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:15px 34px;border-radius:999px;transition:transform .15s,background .2s,color .2s}
+.btn-solid{background:var(--bone);color:var(--char)}
+.btn-solid:hover{transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--line);color:var(--bone-dim)}
+.btn-ghost:hover{border-color:var(--bone);color:var(--bone)}
+.hero .soon{margin-top:16px;font-size:13px;color:var(--bone-faint);letter-spacing:.06em}
+
+/* ── USP band ── */
+.usp{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--char-2)}
+.usp .wrap{display:grid;grid-template-columns:repeat(3,1fr);text-align:center}
+.usp .cell{padding:38px 12px}
+.usp .cell+.cell{border-left:1px solid var(--line)}
+.usp b{display:block;font-family:var(--fd);font-weight:800;font-size:clamp(38px,6vw,58px);line-height:1;font-variant-numeric:tabular-nums}
+.usp span{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--bone-dim)}
+@media(max-width:560px){.usp .cell{padding:26px 6px}}
+
+/* ── Statement ── */
+.statement{padding:110px 0}
+.statement p{font-family:var(--fd);font-weight:700;font-size:clamp(30px,5.4vw,52px);line-height:1.14;letter-spacing:.015em;max-width:900px}
+.statement .dim{color:var(--bone-faint)}
+.statement .sub{font-family:var(--fb);font-weight:400;font-size:18px;color:var(--bone-dim);margin-top:26px;max-width:620px;line-height:1.7;letter-spacing:0}
+
+/* ── Brand marquee ── */
+.brands{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;overflow:hidden;position:relative}
+.brands::before,.brands::after{content:'';position:absolute;top:0;bottom:0;width:110px;z-index:2;pointer-events:none}
+.brands::before{left:0;background:linear-gradient(90deg,var(--char),transparent)}
+.brands::after{right:0;background:linear-gradient(-90deg,var(--char),transparent)}
+.marquee{display:flex;gap:56px;white-space:nowrap;font-family:var(--fd);font-weight:700;font-size:21px;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-faint);width:max-content}
+@media(prefers-reduced-motion:no-preference){.marquee{animation:slide 42s linear infinite}}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ── Features ── */
+.features{padding:100px 0}
+.features h2,.dl h2{font-family:var(--fd);font-weight:800;font-size:15px;letter-spacing:.32em;text-transform:uppercase;color:var(--bone-dim);margin-bottom:48px}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.fcell{background:var(--char);padding:36px 30px}
+.fcell h3{font-family:var(--fd);font-weight:700;font-size:24px;letter-spacing:.05em;margin-bottom:10px}
+.fcell p{font-size:15.5px;color:var(--bone-dim);line-height:1.65}
+
+/* ── Download ── */
+.dl{padding:100px 0 130px;text-align:center;border-top:1px solid var(--line);background:radial-gradient(600px 300px at 50% 110%,rgba(230,223,208,.06),transparent)}
+.dl h2{margin-bottom:16px}
+.dl .big{font-family:var(--fd);font-weight:800;font-size:clamp(40px,7vw,72px);letter-spacing:.06em;line-height:1.05;margin-bottom:34px}
+
+/* ── Footer ── */
+footer{border-top:1px solid var(--line);padding:34px 0;font-size:13.5px;color:var(--bone-faint)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--bone-dim);text-decoration:none;margin-left:22px}
+footer a:hover{color:var(--bone)}
+footer a:first-child{margin-left:0}
+:focus-visible{outline:2px solid var(--bone);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="nav-mark" href="#top">BRBL</a>
+    <a class="nav-cta" href="#download">Get the app</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <!-- The plate — same mark as the app icon, engraved BRBL arc -->
+  <svg class="plate" viewBox="0 0 400 400" role="img" aria-label="BRBL weight plate">
+    <defs>
+      <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#ece5d6"/><stop offset="1" stop-color="#d9d1bf"/>
+      </linearGradient>
+      <linearGradient id="hub" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#e2e4e7"/><stop offset=".5" stop-color="#b9bcc1"/><stop offset="1" stop-color="#dfe1e4"/>
+      </linearGradient>
+    </defs>
+    <circle cx="200" cy="200" r="160" fill="#8f887a"/>
+    <circle cx="200" cy="200" r="157" fill="url(#face)"/>
+    <circle cx="200" cy="200" r="136" fill="none" stroke="#b3ab99" stroke-width="3"/>
+    <!-- BRBL — each letter placed and rotated individually (Safari-safe) -->
+    <g font-family="Barlow Condensed,sans-serif" font-weight="800" font-size="50" fill="#615c52" text-anchor="middle">
+      <text x="200" y="126" transform="rotate(-36 200 200)">B</text>
+      <text x="200" y="126" transform="rotate(-12 200 200)">R</text>
+      <text x="200" y="126" transform="rotate(12 200 200)">B</text>
+      <text x="200" y="126" transform="rotate(36 200 200)">L</text>
+    </g>
+    <!-- 20 KG — bottom arc, letters follow the curve -->
+    <g font-family="Barlow Condensed,sans-serif" font-weight="700" font-size="24" fill="#8a8375" text-anchor="middle">
+      <text x="200" y="286" transform="rotate(24 200 200)">2</text>
+      <text x="200" y="286" transform="rotate(10 200 200)">0</text>
+      <text x="200" y="286" transform="rotate(-8 200 200)">K</text>
+      <text x="200" y="286" transform="rotate(-22 200 200)">G</text>
+    </g>
+    <circle cx="200" cy="200" r="48" fill="url(#hub)"/>
+    <circle cx="200" cy="200" r="48" fill="none" stroke="#9a9da2" stroke-width="2"/>
+    <g fill="#8f9297">
+      <circle cx="200" cy="165" r="4"/><circle cx="225" cy="175" r="4"/><circle cx="235" cy="200" r="4"/>
+      <circle cx="225" cy="225" r="4"/><circle cx="200" cy="235" r="4"/><circle cx="175" cy="225" r="4"/>
+      <circle cx="165" cy="200" r="4"/><circle cx="175" cy="175" r="4"/>
+    </g>
+    <circle cx="200" cy="200" r="17" fill="#26282b"/>
+  </svg>
+
+  <h1>BRBL</h1>
+  <p class="tag">Built for the iron</p>
+  <div class="cta-row">
+    <a class="btn btn-solid" href="#download">Download for iPhone</a>
+    <a class="btn btn-ghost" href="#features">See what it does</a>
+  </div>
+  <p class="soon">Free on the App Store.</p>
+</header>
+
+<section class="usp">
+  <div class="wrap">
+    <div class="cell"><b>1,580</b><span>Exercises</span></div>
+    <div class="cell"><b>43</b><span>Equipment brands</span></div>
+    <div class="cell"><b>0</b><span>Guesswork</span></div>
+  </div>
+</section>
+
+<section class="statement">
+  <div class="wrap">
+    <p>Every other tracker says <span class="dim">"Chest Press."</span><br/>
+    BRBL says Panatta Fit Evo Vertical Chest Press.</p>
+    <p class="sub">BRBL is built around real gym equipment. Tell it which brands your gym runs — Panatta, Watson, Life Fitness, Technogym, PRIME, Atlantis and 37 more — and every plan, every search, every logged set names the exact machine in front of you.</p>
+  </div>
+</section>
+
+<div class="brands" aria-hidden="true">
+  <div class="marquee">
+    <span>Panatta</span><span>Watson</span><span>Life Fitness</span><span>Technogym</span><span>PRIME</span><span>Atlantis</span><span>Gymleco</span><span>Hammer Strength</span><span>Precor</span><span>Matrix</span><span>Nautilus</span><span>Cybex</span><span>Arsenal Strength</span><span>Rogue</span><span>Eleiko</span>
+    <span>Panatta</span><span>Watson</span><span>Life Fitness</span><span>Technogym</span><span>PRIME</span><span>Atlantis</span><span>Gymleco</span><span>Hammer Strength</span><span>Precor</span><span>Matrix</span><span>Nautilus</span><span>Cybex</span><span>Arsenal Strength</span><span>Rogue</span><span>Eleiko</span>
+  </div>
+</div>
+
+<section class="features" id="features">
+  <div class="wrap">
+    <h2>What it does</h2>
+    <div class="fgrid">
+      <div class="fcell">
+        <h3>Plan your split</h3>
+        <p>Two to six training days. Push, pull, legs or fully custom. Target sets, reps and weight per exercise — with rest timers set per lift, so squats get three minutes and raises get forty-five seconds.</p>
+      </div>
+      <div class="fcell">
+        <h3>Log every set</h3>
+        <p>Your last session's numbers sit under every set as the target to beat. Tick a set, the rest countdown starts. Warm-up, working, superset, drop set and failure — all tracked.</p>
+      </div>
+      <div class="fcell">
+        <h3>Break records</h3>
+        <p>Personal records are detected automatically — the set turns gold the moment you earn it. Estimated one-rep max recalculates live on every lift.</p>
+      </div>
+      <div class="fcell">
+        <h3>Load the bar right</h3>
+        <p>The plate calculator shows exactly which plates go on each side, plus warm-up sets at 40, 60 and 80 percent. Full kilogram and pound support, including the plate maths.</p>
+      </div>
+      <div class="fcell">
+        <h3>See the progress</h3>
+        <p>Strength graphs per exercise, weekly muscle-group balance, a training calendar, body weight trends, and your complete history — exportable to Apple Health or CSV any time.</p>
+      </div>
+      <div class="fcell">
+        <h3>Yours, everywhere</h3>
+        <p>Works fully offline in the gym basement. Sign in and it syncs across your devices. Ten colour themes. No ads. No paywall on your own data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dl" id="download">
+  <div class="wrap">
+    <h2>Get BRBL</h2>
+    <p class="big">Know your gym.<br/>Beat your numbers.</p>
+    <!-- Once live, replace href with your App Store link:
+         https://apps.apple.com/app/idXXXXXXXXXX -->
+    <a class="btn btn-solid" href="#" id="appstore-link">Download on the App&nbsp;Store</a>
+    <p class="soon" style="margin-top:16px;color:var(--bone-faint);font-size:13px">iPhone &amp; iPad · Free</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 BRBL · Made in Scotland</span>
+    <span>
+      <a href="/workout-generator/privacy">Privacy</a>
+      <a href="https://github.com/douggscott/workout-generator">Support</a>
+      <a href="https://instagram.com/brbl.app">Instagram</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
