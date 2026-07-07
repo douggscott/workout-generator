@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>BRBL — Built for the iron.</title>
-<meta name="description" content="BRBL is the gym tracker built around real equipment. 1,580 exercises across 43 brands — Panatta, Watson, Life Fitness, Technogym and more."/>
+<meta name="description" content="BRBL is the gym tracker built around real equipment. 1,798 exercises across 72 brands — Panatta, Watson, Life Fitness, Technogym and more."/>
 <meta property="og:title" content="BRBL — Built for the iron."/>
 <meta property="og:description" content="The only gym tracker that knows your gym's actual machines. 1,580 exercises. 43 equipment brands."/>
 <meta property="og:type" content="website"/>
@@ -67,6 +67,11 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .statement .dim{color:var(--bone-faint)}
 .statement .sub{font-family:var(--fb);font-weight:400;font-size:18px;color:var(--bone-dim);margin-top:26px;max-width:620px;line-height:1.7;letter-spacing:0}
 
+/* ── Loaded bar divider ── */
+.loadbar{padding:26px 24px 44px;border-top:1px solid var(--line);text-align:center}
+.loadbar svg{width:min(680px,92vw);height:auto;display:block;margin:0 auto}
+.loadbar-cap{margin-top:16px;font-size:13.5px;color:var(--bone-faint);letter-spacing:.04em}
+
 /* ── Brand marquee ── */
 .brands{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;overflow:hidden;position:relative}
 .brands::before,.brands::after{content:'';position:absolute;top:0;bottom:0;width:110px;z-index:2;pointer-events:none}
@@ -89,6 +94,79 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .dl h2{margin-bottom:16px}
 .dl .big{font-family:var(--fd);font-weight:800;font-size:clamp(40px,7vw,72px);letter-spacing:.06em;line-height:1.05;margin-bottom:34px}
 
+/* ── Screens ── */
+.sec-h{font-family:var(--fd);font-weight:800;font-size:15px;letter-spacing:.32em;text-transform:uppercase;color:var(--bone-dim);margin-bottom:48px}
+.screens{padding:100px 0 80px;border-top:1px solid var(--line)}
+.phones{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:34px}
+.phone-card{text-align:center}
+.phone{background:var(--char-2);border:1px solid var(--line);border-radius:34px;padding:22px 18px 26px;text-align:left;box-shadow:0 24px 50px rgba(0,0,0,.4);min-height:340px}
+.p-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.p-brand{font-family:var(--fd);font-weight:800;font-size:15px;letter-spacing:.24em}
+.p-sub{font-size:8.5px;letter-spacing:.18em;color:var(--bone-faint)}
+.p-title{font-family:var(--fd);font-weight:700;font-size:22px;letter-spacing:.03em}
+.p-meta{font-size:10.5px;color:var(--bone-dim);margin:4px 0 8px}
+.p-bar{height:3px;background:var(--char-3);border-radius:99px;margin-bottom:14px}
+.p-bar i{display:block;height:100%;background:var(--bone);border-radius:99px}
+.p-ex-name{font-size:12.5px;font-weight:600;line-height:1.3}
+.p-ex-sub{font-size:9.5px;color:#b08d57;margin:3px 0 9px}
+.p-set{display:flex;gap:6px;align-items:center;margin-bottom:6px;font-size:12px}
+.p-set span{width:16px;color:var(--bone-faint);font-size:10px}
+.p-set b{flex:1;background:var(--char-3);border:1px solid var(--line);border-radius:9px;padding:6px 0;text-align:center;font-family:var(--fd);font-weight:700;font-size:14px}
+.p-set em{width:26px;height:26px;border-radius:8px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:11px;color:var(--bone-faint)}
+.p-set.done b{border-color:#3a6b4f;background:rgba(46,107,79,.14)}
+.p-set.done em{background:#3a6b4f;border-color:#3a6b4f;color:#fff}
+.p-set.gold b{border-color:#b08d57;background:rgba(176,141,87,.12)}
+.p-set.gold em{background:#b08d57;border-color:#b08d57}
+.p-search{background:var(--char-3);border:1px solid var(--line);border-radius:99px;padding:8px 13px;font-size:11px;color:var(--bone-faint);margin-bottom:10px}
+.p-chips{display:flex;gap:5px;margin-bottom:12px}
+.p-chips span{font-size:10px;padding:4px 11px;border-radius:99px;border:1px solid var(--line);color:var(--bone-dim)}
+.p-chips span.on{background:var(--bone);color:var(--char);border-color:var(--bone);font-weight:600}
+.p-row{padding:9px 0;border-bottom:1px solid var(--line)}
+.p-row b{display:block;font-size:12px;font-weight:600;line-height:1.3}
+.p-row i{font-style:normal;font-size:9.5px;color:var(--bone-faint)}
+.p-target{font-family:var(--fd);font-weight:800;font-size:52px;text-align:center;margin:18px 0 4px}
+.p-target small{font-size:20px;color:var(--bone-dim)}
+.p-plates{display:flex;gap:7px;justify-content:center;margin:14px 0}
+.pl{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:800;font-size:14px;color:#fff}
+.pl.sm{width:34px;height:34px;font-size:10px;align-self:center}
+.p-persides{text-align:center;font-size:10.5px;color:var(--bone-faint)}
+.p-warm{text-align:center;font-size:11px;color:var(--bone-dim);margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.p-cap{margin-top:16px;font-size:13.5px;color:var(--bone-dim)}
+
+/* ── Email list ── */
+.list{padding:90px 0;border-top:1px solid var(--line);background:var(--char-2);text-align:center}
+.list-lead{color:var(--bone-dim);max-width:440px;margin:0 auto 28px}
+.list-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.list-inp{background:var(--char);border:1px solid var(--line);border-radius:999px;color:var(--bone);font-family:var(--fb);font-size:15px;padding:14px 22px;width:min(320px,80vw);outline:none}
+.list-inp:focus{border-color:var(--bone-dim)}
+.list-btn{border:none;cursor:pointer}
+
+/* ── Story ── */
+.story{padding:100px 0;border-top:1px solid var(--line)}
+.story-line{font-family:var(--fd);font-weight:700;font-size:clamp(26px,4.6vw,42px);line-height:1.2;max-width:820px}
+.story-sub{color:var(--bone-dim);max-width:600px;margin-top:22px;line-height:1.7}
+/* ── FAQ ── */
+.faq{padding:90px 0;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line);padding:20px 0}
+.faq summary{font-family:var(--fd);font-weight:700;font-size:20px;letter-spacing:.03em;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq summary::after{content:'+';font-size:24px;color:var(--bone-faint);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--bone-dim);padding-top:12px;max-width:640px;line-height:1.7}
+.faq a{color:var(--bone)}
+
+/* ── Story ── */
+.story{padding:100px 0;border-top:1px solid var(--line)}
+.story-big{font-family:var(--fd);font-weight:700;font-size:clamp(28px,4.8vw,44px);line-height:1.18;max-width:820px}
+.story-sub{color:var(--bone-dim);max-width:600px;margin-top:22px;line-height:1.7}
+
+/* ── Drop banner ── */
+.drop-banner{display:block;text-decoration:none;background:var(--bone);color:var(--char);border-top:1px solid var(--line)}
+.drop-in{display:flex;align-items:center;gap:22px;padding-top:22px;padding-bottom:22px;flex-wrap:wrap}
+.drop-stamp{font-family:var(--fd);font-weight:700;font-size:12px;letter-spacing:.3em;border:1px solid rgba(23,22,21,.3);border-radius:999px;padding:6px 16px}
+.drop-title{font-family:var(--fd);font-weight:800;font-size:clamp(18px,3vw,26px);letter-spacing:.1em}
+.drop-cta{margin-left:auto;font-family:var(--fd);font-weight:700;font-size:15px;letter-spacing:.08em;text-transform:uppercase}
+.drop-banner:hover .drop-cta{text-decoration:underline}
+
 /* ── Footer ── */
 footer{border-top:1px solid var(--line);padding:34px 0;font-size:13.5px;color:var(--bone-faint)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
@@ -103,7 +181,10 @@ footer a:first-child{margin-left:0}
 <nav>
   <div class="wrap">
     <a class="nav-mark" href="#top">BRBL</a>
-    <a class="nav-cta" href="#download">Get the app</a>
+    <span style="display:flex;gap:22px;align-items:center">
+      <a href="/drop" style="font-family:var(--fd);font-weight:700;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--bone-dim);text-decoration:none">Drop 001</a>
+      <a class="nav-cta" href="#download">Get the app</a>
+    </span>
   </div>
 </nav>
 
@@ -156,8 +237,8 @@ footer a:first-child{margin-left:0}
 
 <section class="usp">
   <div class="wrap">
-    <div class="cell"><b>1,580</b><span>Exercises</span></div>
-    <div class="cell"><b>43</b><span>Equipment brands</span></div>
+    <div class="cell"><b>1,798</b><span>Exercises</span></div>
+    <div class="cell"><b>72</b><span>Equipment brands</span></div>
     <div class="cell"><b>0</b><span>Guesswork</span></div>
   </div>
 </section>
@@ -166,9 +247,45 @@ footer a:first-child{margin-left:0}
   <div class="wrap">
     <p>Every other tracker says <span class="dim">"Chest Press."</span><br/>
     BRBL says Panatta Fit Evo Vertical Chest Press.</p>
-    <p class="sub">BRBL is built around real gym equipment. Tell it which brands your gym runs — Panatta, Watson, Life Fitness, Technogym, PRIME, Atlantis and 37 more — and every plan, every search, every logged set names the exact machine in front of you.</p>
+    <p class="sub">BRBL is built around real gym equipment. Tell it which brands your gym runs — Panatta, Watson, Life Fitness, Technogym, PRIME, Atlantis and 66 more — and every plan, every search, every logged set names the exact machine in front of you.</p>
   </div>
 </section>
+
+<!-- ── The loaded bar — IPF competition colours ── -->
+<div class="loadbar" aria-hidden="true">
+  <svg viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet">
+    <!-- shaft: uniform thickness between the shoulders -->
+    <rect x="262" y="55" width="476" height="10" rx="5" fill="#0c0b0a" stroke="rgba(230,223,208,.25)" stroke-width="1"/>
+    <!-- shoulders -->
+    <rect x="250" y="48" width="14" height="24" rx="4" fill="#161514" stroke="rgba(230,223,208,.25)" stroke-width="1"/>
+    <rect x="736" y="48" width="14" height="24" rx="4" fill="#161514" stroke="rgba(230,223,208,.25)" stroke-width="1"/>
+    <!-- sleeves: only under the plates, ending just past the collars -->
+    <rect x="100" y="52" width="150" height="16" rx="6" fill="#161514" stroke="rgba(230,223,208,.2)" stroke-width="1"/>
+    <rect x="750" y="52" width="150" height="16" rx="6" fill="#161514" stroke="rgba(230,223,208,.2)" stroke-width="1"/>
+    <!-- LEFT plates: red innermost against the shoulder -->
+    <g>
+      <rect x="220" y="12" width="26" height="96" rx="7" fill="#dc2626"/>
+      <rect x="190" y="16" width="24" height="88" rx="7" fill="#2563eb"/>
+      <rect x="164" y="22" width="22" height="76" rx="7" fill="#eab308"/>
+      <rect x="140" y="30" width="20" height="60" rx="7" fill="#16a34a"/>
+      <rect x="118" y="38" width="18" height="44" rx="7" fill="#f6f2e8" stroke="#8f887a" stroke-width="2"/>
+      <rect x="100" y="44" width="14" height="32" rx="6" fill="#0c0b0a" stroke="rgba(230,223,208,.45)" stroke-width="2"/>
+    </g>
+    <!-- RIGHT plates mirrored -->
+    <g>
+      <rect x="754" y="12" width="26" height="96" rx="7" fill="#dc2626"/>
+      <rect x="786" y="16" width="24" height="88" rx="7" fill="#2563eb"/>
+      <rect x="814" y="22" width="22" height="76" rx="7" fill="#eab308"/>
+      <rect x="840" y="30" width="20" height="60" rx="7" fill="#16a34a"/>
+      <rect x="864" y="38" width="18" height="44" rx="7" fill="#f6f2e8" stroke="#8f887a" stroke-width="2"/>
+      <rect x="886" y="44" width="14" height="32" rx="6" fill="#0c0b0a" stroke="rgba(230,223,208,.45)" stroke-width="2"/>
+    </g>
+    <!-- collars outside the last plate -->
+    <rect x="80" y="46" width="14" height="28" rx="4" fill="#c6cacf"/>
+    <rect x="906" y="46" width="14" height="28" rx="4" fill="#c6cacf"/>
+  </svg>
+  <p class="loadbar-cap">175 kg on the bar &mdash; BRBL knows exactly what to load.</p>
+</div>
 
 <div class="brands" aria-hidden="true">
   <div class="marquee">
@@ -176,6 +293,78 @@ footer a:first-child{margin-left:0}
     <span>Panatta</span><span>Watson</span><span>Life Fitness</span><span>Technogym</span><span>PRIME</span><span>Atlantis</span><span>Gymleco</span><span>Hammer Strength</span><span>Precor</span><span>Matrix</span><span>Nautilus</span><span>Cybex</span><span>Arsenal Strength</span><span>Rogue</span><span>Eleiko</span>
   </div>
 </div>
+
+<!-- ── Screens ── -->
+<section class="screens" id="screens">
+  <div class="wrap">
+    <h2 class="sec-h">In the gym</h2>
+    <div class="phones">
+
+      <div class="phone-card">
+        <div class="phone">
+          <div class="p-head"><span class="p-brand">BRBL</span><span class="p-sub">LOG WORKOUT</span></div>
+          <div class="p-title">Push</div>
+          <div class="p-meta">⏱ 42:18 &nbsp;·&nbsp; ✅ 9/14 sets &nbsp;·&nbsp; 6,240kg</div>
+          <div class="p-bar"><i style="width:64%"></i></div>
+          <div class="p-ex">
+            <div class="p-ex-name">Panatta Fit Evo Vertical Chest Press</div>
+            <div class="p-ex-sub">🏆 PR: 90kg · Est. 1RM 114kg</div>
+            <div class="p-set done"><span>1</span><b>90</b><b>8</b><em>✓</em></div>
+            <div class="p-set gold"><span>2</span><b>92.5</b><b>8</b><em>🏆</em></div>
+            <div class="p-set"><span>3</span><b>92.5</b><b></b><em></em></div>
+          </div>
+        </div>
+        <p class="p-cap">PRs turn gold as you earn them</p>
+      </div>
+
+      <div class="phone-card">
+        <div class="phone">
+          <div class="p-head"><span class="p-brand">BRBL</span><span class="p-sub">EXERCISE LIBRARY</span></div>
+          <div class="p-search">🔍 Search 1,798 exercises…</div>
+          <div class="p-chips"><span class="on">Panatta</span><span>Watson</span><span>Chest</span></div>
+          <div class="p-row"><b>Panatta Fit Evo Vertical Chest Press</b><i>Panatta · Chest</i></div>
+          <div class="p-row"><b>Panatta Fit Evo Pectoral Machine</b><i>Panatta · Chest</i></div>
+          <div class="p-row"><b>Panatta SEC Incline Chest Press</b><i>Panatta · Upper Chest</i></div>
+          <div class="p-row"><b>Panatta Freeweight HP Chest Press</b><i>Panatta · Chest</i></div>
+        </div>
+        <p class="p-cap">Filter by your gym's actual brands</p>
+      </div>
+
+      <div class="phone-card">
+        <div class="phone">
+          <div class="p-head"><span class="p-brand">BRBL</span><span class="p-sub">PLATE CALCULATOR</span></div>
+          <div class="p-target">142.5<small>kg</small></div>
+          <div class="p-plates">
+            <span class="pl" style="background:#c0392b">25</span>
+            <span class="pl" style="background:#2e5aac">20</span>
+            <span class="pl" style="background:#c9a227;color:#1a1917">15</span>
+            <span class="pl sm" style="background:#e6e0d2;color:#1a1917">1.25</span>
+          </div>
+          <div class="p-persides">per side · 20kg bar</div>
+          <div class="p-warm">Warm-up: 60×10 · 85×6 · 115×3</div>
+        </div>
+        <p class="p-cap">Exactly what to load, per side</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Email list ── -->
+<section class="list" id="list">
+  <div class="wrap">
+    <h2 class="sec-h">Stay close</h2>
+    <p class="list-lead">BRBL Pro and the first clothing drop are coming. The list hears first.</p>
+    <!-- FormSubmit: replace YOUR-EMAIL-HERE with your real email address.
+         First submission sends you a confirmation link — click it once and it's live. -->
+    <form class="list-form" action="https://formsubmit.co/douggscott99@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="BRBL list signup"/>
+      <input type="hidden" name="_captcha" value="false"/>
+      <input class="list-inp" type="email" name="email" placeholder="your@email.com" required/>
+      <button class="btn btn-solid list-btn" type="submit">Join the list</button>
+    </form>
+  </div>
+</section>
 
 <section class="features" id="features">
   <div class="wrap">
@@ -209,6 +398,46 @@ footer a:first-child{margin-left:0}
   </div>
 </section>
 
+<!-- ── Story ── -->
+<section class="story" id="story">
+  <div class="wrap">
+    <h2 class="sec-h">The story</h2>
+    <p class="story-line">BRBL was built in Scotland by a lifter who got sick of trackers that didn't know Panatta from a park bench.</p>
+    <p class="story-sub">No venture capital. No growth team. One gym, one laptop, and a database of every machine worth lifting on. The plate on the icon is the plate on the gym floor — and soon, the plate on your chest. <a href="/drop" style="color:var(--bone)">DROP 001 is coming.</a></p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <h2 class="sec-h">Questions</h2>
+    <details><summary>Is BRBL free?</summary><p>Yes. The core tracker is free — plan, log, PRs, plate calculator, history. A Pro tier with the deeper tools is coming, but your data is never behind a paywall.</p></details>
+    <details><summary>Does it work offline?</summary><p>Completely. Everything runs on your phone. An account is only needed if you want your data synced across devices.</p></details>
+    <details><summary>My gym's brand isn't listed — what do I do?</summary><p>You can create custom exercises for anything, and the brand database grows with every update. Tell us what's missing on Instagram <a href="https://instagram.com/brbl.app">@brbl.app</a>.</p></details>
+    <details><summary>kg or lbs?</summary><p>Both — fully. The toggle changes every number in the app including the plate calculator's maths and bar weights.</p></details>
+    <details><summary>Android?</summary><p>iPhone first. Android is on the roadmap — join the list above and you'll hear when it lands.</p></details>
+    <details><summary>When is the clothing drop?</summary><p>DROP 001 — heavyweight tees and hoods with the embroidered plate — is in sampling now. Small numbered runs. <a href="/drop">First access goes to the list.</a></p></details>
+  </div>
+</section>
+
+<!-- ── Story ── -->
+<section class="story">
+  <div class="wrap">
+    <h2 class="sec-h">The story</h2>
+    <p class="story-big">Built in Scotland by a lifter who got sick of trackers that didn&rsquo;t know Panatta from a park bench.</p>
+    <p class="story-sub">BRBL started as a tool for one gym floor and became a database of 1,580 exercises across 43 global equipment brands — because the machine matters, and no other app agrees.</p>
+  </div>
+</section>
+
+<!-- ── Drop banner ── -->
+<a class="drop-banner" href="/drop">
+  <div class="wrap drop-in">
+    <span class="drop-stamp">CLOTHING</span>
+    <span class="drop-title">DROP 001 — COMING SOON</span>
+    <span class="drop-cta">First access &rarr;</span>
+  </div>
+</a>
+
 <section class="dl" id="download">
   <div class="wrap">
     <h2>Get BRBL</h2>
@@ -224,6 +453,7 @@ footer a:first-child{margin-left:0}
   <div class="wrap">
     <span>© 2026 BRBL · Made in Scotland</span>
     <span>
+      <a href="/drop">Drop 001</a>
       <a href="/privacy">Privacy</a>
       <a href="https://github.com/douggscott/workout-generator">Support</a>
       <a href="https://instagram.com/brbl.app">Instagram</a>
