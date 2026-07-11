@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Store Test — BRBL (not public)</title>
+<meta name="robots" content="noindex,nofollow"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500&display=swap');
+:root{--char:#171615;--bone:#e6dfd0;--dim:#a39d8e;--faint:#6d675c;--line:rgba(230,223,208,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--char);color:var(--bone);font-family:'Barlow',sans-serif;min-height:100svh;display:flex;flex-direction:column;padding:24px}
+h1{font-family:'Barlow Condensed';font-weight:800;font-size:28px;margin-bottom:4px}
+.warn{color:#e6a34b;font-size:13px;margin-bottom:32px;border:1px solid var(--line);padding:10px 14px;border-radius:8px;max-width:480px}
+.brbl-product{background:#221f1d;color:var(--bone);padding:24px;border-radius:8px;max-width:320px;font-family:'Barlow',sans-serif;margin-bottom:24px;border:1px solid var(--line)}
+.brbl-product h3{font-family:'Barlow Condensed';font-weight:700;margin:12px 0 4px}
+.brbl-price{font-size:18px;margin:0 0 16px;color:var(--dim)}
+.brbl-size-select{width:100%;padding:10px;margin-bottom:12px;background:var(--char);color:var(--bone);border:1px solid var(--line);border-radius:4px;font-family:'Barlow',sans-serif}
+.brbl-add-to-cart{width:100%;padding:12px;background:var(--bone);color:var(--char);border:none;border-radius:4px;font-family:'Barlow Condensed';font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
+.brbl-add-to-cart:hover{background:#d4cbb5}
+</style>
+</head>
+<body>
+
+<h1>Store test page</h1>
+<p class="warn">⚠ Not linked from the site. Snipcart is in TEST mode — no real charges, no real Printful orders will be created from here.</p>
+
+<!-- ---------- CRUISER HOODIE — French Navy ---------- -->
+<div class="brbl-product">
+  <h3>BRBL Cruiser Hoodie — French Navy</h3>
+  <p class="brbl-price">£45.00</p>
+  <select class="brbl-size-select" id="size-cruiser-hoodie-navy">
+    <option value="6a51e0d90713c3" data-price="45.00">S</option>
+    <option value="6a51e0d9071404" data-price="45.00">M</option>
+    <option value="6a51e0d9071427" data-price="45.00">L</option>
+    <option value="6a51e0d9071435" data-price="45.00">XL</option>
+    <option value="6a51e0d9071458" data-price="46.50">2XL</option>
+  </select>
+  <button type="button" class="brbl-add-to-cart"
+    onclick="brblAddToCart({
+      name: 'BRBL Cruiser Hoodie — French Navy',
+      selectId: 'size-cruiser-hoodie-navy',
+      image: '',
+      url: '/store-test.html'
+    })">
+    Add to Cart
+  </button>
+</div>
+
+<!-- ---------- ORGANIC COTTON TEE — French Navy ---------- -->
+<div class="brbl-product">
+  <h3>BRBL Organic Cotton Tee — French Navy</h3>
+  <p class="brbl-price">£24.00</p>
+  <select class="brbl-size-select" id="size-organic-tee-navy">
+    <option value="6a50a720304797" data-price="24.00">S</option>
+    <option value="6a50a7203047d3" data-price="24.00">M</option>
+    <option value="6a50a7203047f7" data-price="24.00">L</option>
+    <option value="6a50a720304817" data-price="24.00">XL</option>
+  </select>
+  <button type="button" class="brbl-add-to-cart"
+    onclick="brblAddToCart({
+      name: 'BRBL Organic Cotton Tee — French Navy',
+      selectId: 'size-organic-tee-navy',
+      image: '',
+      url: '/store-test.html'
+    })">
+    Add to Cart
+  </button>
+</div>
+
+<!-- ============================================================
+     Snipcart install — TEST MODE key
+     ============================================================ -->
+<link rel="preconnect" href="https://app.snipcart.com" />
+<link rel="preconnect" href="https://cdn.snipcart.com" />
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.css" />
+
+<div hidden id="snipcart" data-config-modal-style="side"
+  data-api-key="Njg2ZDIxOWYtN2RiNi00ZTk1LWExNTEtNDJiZmM0YmI1M2I4NjM5MTkzMTMzNTkwMDg2NDc0">
+</div>
+
+<script async src="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.js"></script>
+
+<script>
+  function brblAddToCart({ name, selectId, image, url }) {
+    const select = document.getElementById(selectId);
+    const option = select.options[select.selectedIndex];
+    const variantId = option.value;
+    const price = option.dataset.price;
+    const size = option.textContent;
+
+    Snipcart.api.cart.items.add({
+      id: variantId,
+      name: `${name} (${size})`,
+      price: price,
+      url: url,
+      image: image,
+      quantity: 1,
+      customFields: [
+        { name: 'size', value: size }
+      ]
+    });
+  }
+</script>
+
+</body>
+</html>
