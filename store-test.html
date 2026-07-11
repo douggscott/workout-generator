@@ -15,8 +15,8 @@ h1{font-family:'Barlow Condensed';font-weight:800;font-size:28px;margin-bottom:4
 .brbl-product{background:#221f1d;color:var(--bone);padding:24px;border-radius:8px;max-width:320px;font-family:'Barlow',sans-serif;margin-bottom:24px;border:1px solid var(--line)}
 .brbl-product h3{font-family:'Barlow Condensed';font-weight:700;margin:12px 0 4px}
 .brbl-price{font-size:18px;margin:0 0 16px;color:var(--dim)}
-.brbl-size-select{width:100%;padding:10px;margin-bottom:12px;background:var(--char);color:var(--bone);border:1px solid var(--line);border-radius:4px;font-family:'Barlow',sans-serif}
-.brbl-add-to-cart{width:100%;padding:12px;background:var(--bone);color:var(--char);border:none;border-radius:4px;font-family:'Barlow Condensed';font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
+.brbl-sizes{display:flex;flex-wrap:wrap;gap:8px}
+.brbl-add-to-cart{padding:10px 16px;background:var(--bone);color:var(--char);border:none;border-radius:4px;font-family:'Barlow Condensed';font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer}
 .brbl-add-to-cart:hover{background:#d4cbb5}
 </style>
 </head>
@@ -28,44 +28,80 @@ h1{font-family:'Barlow Condensed';font-weight:800;font-size:28px;margin-bottom:4
 <!-- ---------- CRUISER HOODIE — French Navy ---------- -->
 <div class="brbl-product">
   <h3>BRBL Cruiser Hoodie — French Navy</h3>
-  <p class="brbl-price">£45.00</p>
-  <select class="brbl-size-select" id="size-cruiser-hoodie-navy">
-    <option value="6a51e0d90713c3" data-price="45.00">S</option>
-    <option value="6a51e0d9071404" data-price="45.00">M</option>
-    <option value="6a51e0d9071427" data-price="45.00">L</option>
-    <option value="6a51e0d9071435" data-price="45.00">XL</option>
-    <option value="6a51e0d9071458" data-price="46.50">2XL</option>
-  </select>
-  <button type="button" class="brbl-add-to-cart"
-    onclick="brblAddToCart({
-      name: 'BRBL Cruiser Hoodie — French Navy',
-      selectId: 'size-cruiser-hoodie-navy',
-      image: '',
-      url: '/store-test.html'
-    })">
-    Add to Cart
-  </button>
+  <p class="brbl-price">£45.00 (2XL £46.50)</p>
+  <div class="brbl-sizes">
+    <button class="brbl-add-to-cart snipcart-add-item"
+      data-item-id="6a51e0d90713c3"
+      data-item-price="45.00"
+      data-item-url="/store-test.html"
+      data-item-name="BRBL Cruiser Hoodie — French Navy (S)">
+      S
+    </button>
+    <button class="brbl-add-to-cart snipcart-add-item"
+      data-item-id="6a51e0d9071404"
+      data-item-price="45.00"
+      data-item-url="/store-test.html"
+      data-item-name="BRBL Cruiser Hoodie — French Navy (M)">
+      M
+    </button>
+    <button class="brbl-add-to-cart snipcart-add-item"
+      data-item-id="6a51e0d9071427"
+      data-item-price="45.00"
+      data-item-url="/store-test.html"
+      data-item-name="BRBL Cruiser Hoodie — French Navy (L)">
+      L
+    </button>
+    <button class="brbl-add-to-cart snipcart-add-item"
+      data-item-id="6a51e0d9071435"
+      data-item-price="45.00"
+      data-item-url="/store-test.html"
+      data-item-name="BRBL Cruiser Hoodie — French Navy (XL)">
+      XL
+    </button>
+    <button class="brbl-add-to-cart snipcart-add-item"
+      data-item-id="6a51e0d9071458"
+      data-item-price="46.50"
+      data-item-url="/store-test.html"
+      data-item-name="BRBL Cruiser Hoodie — French Navy (2XL)">
+      2XL
+    </button>
+  </div>
 </div>
 
 <!-- ---------- ORGANIC COTTON TEE — French Navy ---------- -->
 <div class="brbl-product">
   <h3>BRBL Organic Cotton Tee — French Navy</h3>
   <p class="brbl-price">£24.00</p>
-  <select class="brbl-size-select" id="size-organic-tee-navy">
-    <option value="6a50a720304797" data-price="24.00">S</option>
-    <option value="6a50a7203047d3" data-price="24.00">M</option>
-    <option value="6a50a7203047f7" data-price="24.00">L</option>
-    <option value="6a50a720304817" data-price="24.00">XL</option>
-  </select>
-  <button type="button" class="brbl-add-to-cart"
-    onclick="brblAddToCart({
-      name: 'BRBL Organic Cotton Tee — French Navy',
-      selectId: 'size-organic-tee-navy',
-      image: '',
-      url: '/store-test.html'
-    })">
-    Add to Cart
-  </button>
+  <div class="brbl-sizes">
+    <button class="brbl-add-to-cart snipcart-add-item"
+      data-item-id="6a50a720304797"
+      data-item-price="24.00"
+      data-item-url="/store-test.html"
+      data-item-name="BRBL Organic Cotton Tee — French Navy (S)">
+      S
+    </button>
+    <button class="brbl-add-to-cart snipcart-add-item"
+      data-item-id="6a50a7203047d3"
+      data-item-price="24.00"
+      data-item-url="/store-test.html"
+      data-item-name="BRBL Organic Cotton Tee — French Navy (M)">
+      M
+    </button>
+    <button class="brbl-add-to-cart snipcart-add-item"
+      data-item-id="6a50a7203047f7"
+      data-item-price="24.00"
+      data-item-url="/store-test.html"
+      data-item-name="BRBL Organic Cotton Tee — French Navy (L)">
+      L
+    </button>
+    <button class="brbl-add-to-cart snipcart-add-item"
+      data-item-id="6a50a720304817"
+      data-item-price="24.00"
+      data-item-url="/store-test.html"
+      data-item-name="BRBL Organic Cotton Tee — French Navy (XL)">
+      XL
+    </button>
+  </div>
 </div>
 
 <!-- ============================================================
@@ -80,28 +116,6 @@ h1{font-family:'Barlow Condensed';font-weight:800;font-size:28px;margin-bottom:4
 </div>
 
 <script async src="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.js"></script>
-
-<script>
-  function brblAddToCart({ name, selectId, image, url }) {
-    const select = document.getElementById(selectId);
-    const option = select.options[select.selectedIndex];
-    const variantId = option.value;
-    const price = option.dataset.price;
-    const size = option.textContent;
-
-    Snipcart.api.cart.items.add({
-      id: variantId,
-      name: `${name} (${size})`,
-      price: price,
-      url: url,
-      image: image,
-      quantity: 1,
-      customFields: [
-        { name: 'size', value: size }
-      ]
-    });
-  }
-</script>
 
 </body>
 </html>
