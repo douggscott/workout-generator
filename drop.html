@@ -4,9 +4,9 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>DROP 001 — BRBL</title>
-<meta name="description" content="BRBL clothing. First drop coming. Built for the iron."/>
+<meta name="description" content="BRBL clothing. Heavyweight tees and hoods, embroidered with the plate. Built for the iron."/>
 <meta name="theme-color" content="#171615"/>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23171615'/%3E%3Ccircle cx='32' cy='32' r='25' fill='%23e2dbcc'/%3E%3Ccircle cx='32' cy='32' r='21' fill='none' stroke='%239e988c' stroke-width='1.5'/%3E%3Ccircle cx='32' cy='32' r='7.5' fill='%23d8dadd'/%3E%3Ccircle cx='32' cy='32' r='2.8' fill='%23262a2d'/%3E%3C/svg%3E"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle width='64' height='64' rx='14' fill='%23171615'/%3E%3C/svg%3E"/>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500&display=swap');
 :root{--char:#171615;--bone:#e6dfd0;--dim:#a39d8e;--faint:#6d675c;--line:rgba(230,223,208,.12)}
@@ -16,18 +16,32 @@ nav{border-bottom:1px solid var(--line)}
 nav .in{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:60px}
 .mark{font-family:'Barlow Condensed';font-weight:800;font-size:22px;letter-spacing:.28em;text-decoration:none;color:var(--bone)}
 nav a.back{font-size:14px;color:var(--dim);text-decoration:none}
-main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 24px}
+main{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:60px 24px}
 .stamp{font-family:'Barlow Condensed';font-weight:700;font-size:14px;letter-spacing:.4em;color:var(--faint);border:1px solid var(--line);border-radius:999px;padding:8px 22px;margin-bottom:34px}
 h1{font-family:'Barlow Condensed';font-weight:800;font-size:clamp(56px,11vw,120px);letter-spacing:.1em;line-height:.95}
 .sub{font-family:'Barlow Condensed';font-weight:700;font-size:clamp(15px,2.4vw,20px);letter-spacing:.32em;text-transform:uppercase;color:var(--dim);margin:16px 0 44px}
-.copy{color:var(--dim);max-width:420px;line-height:1.7;margin-bottom:36px}
+.copy{color:var(--dim);max-width:560px;line-height:1.7;margin-bottom:48px}
+
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;max-width:760px;width:100%;margin-bottom:56px;text-align:left}
+.product{background:#1e1c1a;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.product img{width:100%;display:block;background:#0d0c0b}
+.product-body{padding:20px}
+.product h3{font-family:'Barlow Condensed';font-weight:700;font-size:20px;margin-bottom:4px}
+.product .price{color:var(--dim);font-size:15px;margin-bottom:16px}
+.sizes{display:flex;flex-wrap:wrap;gap:8px}
+.size-btn{padding:9px 15px;background:transparent;border:1px solid var(--line);border-radius:999px;color:var(--bone);font-family:'Barlow Condensed';font-weight:700;font-size:14px;letter-spacing:.05em;cursor:pointer}
+.size-btn:hover{background:var(--bone);color:var(--char);border-color:var(--bone)}
+
+.copy2{color:var(--faint);font-size:13px;max-width:480px;margin-bottom:8px}
 form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 input{background:transparent;border:1px solid var(--line);border-radius:999px;color:var(--bone);font-family:'Barlow';font-size:15px;padding:14px 22px;width:min(300px,78vw);outline:none}
 input:focus{border-color:var(--dim)}
-button{font-family:'Barlow Condensed';font-weight:700;font-size:16px;letter-spacing:.08em;text-transform:uppercase;background:var(--bone);color:var(--char);border:none;border-radius:999px;padding:14px 30px;cursor:pointer}
+form button{font-family:'Barlow Condensed';font-weight:700;font-size:16px;letter-spacing:.08em;text-transform:uppercase;background:var(--bone);color:var(--char);border:none;border-radius:999px;padding:14px 26px}
+
 footer{border-top:1px solid var(--line);padding:26px 24px;text-align:center;font-size:13px;color:var(--faint)}
-@media(prefers-reduced-motion:no-preference){
-  h1{animation:rise .8s ease-out both}.sub{animation:rise .8s .12s ease-out both}
+@media (prefers-reduced-motion:no-preference){
+  h1{animation:rise .8s ease-out both}
+  .sub{animation:rise .8s .12s ease-out both}
   @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 }
 </style>
@@ -37,16 +51,98 @@ footer{border-top:1px solid var(--line);padding:26px 24px;text-align:center;font
 <main>
   <div class="stamp">CLOTHING</div>
   <h1>DROP 001</h1>
-  <p class="sub">Built for the iron · Coming soon</p>
-  <p class="copy">Heavyweight tees and hoods, embroidered with the plate. Small runs, numbered pieces. The list gets first access — and drops sell out.</p>
-  <!-- FormSubmit: replace YOUR-EMAIL-HERE with your real email (same as homepage form) -->
+  <p class="sub">Built for the iron · Available now</p>
+  <p class="copy">Heavyweight tees and hoods, embroidered with the plate. Small runs, numbered pieces.</p>
+
+  <div class="products">
+
+    <div class="product">
+      <img src="/cruiser-hoodie-navy.jpg" alt="BRBL Cruiser Hoodie — French Navy"/>
+      <div class="product-body">
+        <h3>Cruiser Hoodie — French Navy</h3>
+        <p class="price">£45.00 (2XL £46.50)</p>
+        <div class="sizes">
+          <button class="size-btn snipcart-add-item"
+            data-item-id="6a51e0d90713c3" data-item-price="45.00"
+            data-item-url="https://brbl.app/drop"
+            data-item-image="https://brbl.app/cruiser-hoodie-navy.jpg"
+            data-item-name="BRBL Cruiser Hoodie — French Navy (S)">S</button>
+          <button class="size-btn snipcart-add-item"
+            data-item-id="6a51e0d9071404" data-item-price="45.00"
+            data-item-url="https://brbl.app/drop"
+            data-item-image="https://brbl.app/cruiser-hoodie-navy.jpg"
+            data-item-name="BRBL Cruiser Hoodie — French Navy (M)">M</button>
+          <button class="size-btn snipcart-add-item"
+            data-item-id="6a51e0d9071427" data-item-price="45.00"
+            data-item-url="https://brbl.app/drop"
+            data-item-image="https://brbl.app/cruiser-hoodie-navy.jpg"
+            data-item-name="BRBL Cruiser Hoodie — French Navy (L)">L</button>
+          <button class="size-btn snipcart-add-item"
+            data-item-id="6a51e0d9071435" data-item-price="45.00"
+            data-item-url="https://brbl.app/drop"
+            data-item-image="https://brbl.app/cruiser-hoodie-navy.jpg"
+            data-item-name="BRBL Cruiser Hoodie — French Navy (XL)">XL</button>
+          <button class="size-btn snipcart-add-item"
+            data-item-id="6a51e0d9071458" data-item-price="46.50"
+            data-item-url="https://brbl.app/drop"
+            data-item-image="https://brbl.app/cruiser-hoodie-navy.jpg"
+            data-item-name="BRBL Cruiser Hoodie — French Navy (2XL)">2XL</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="/organic-tee-navy.jpg" alt="BRBL Organic Cotton Tee — French Navy"/>
+      <div class="product-body">
+        <h3>Organic Cotton Tee — French Navy</h3>
+        <p class="price">£24.00</p>
+        <div class="sizes">
+          <button class="size-btn snipcart-add-item"
+            data-item-id="6a50a720304797" data-item-price="24.00"
+            data-item-url="https://brbl.app/drop"
+            data-item-image="https://brbl.app/organic-tee-navy.jpg"
+            data-item-name="BRBL Organic Cotton Tee — French Navy (S)">S</button>
+          <button class="size-btn snipcart-add-item"
+            data-item-id="6a50a7203047d3" data-item-price="24.00"
+            data-item-url="https://brbl.app/drop"
+            data-item-image="https://brbl.app/organic-tee-navy.jpg"
+            data-item-name="BRBL Organic Cotton Tee — French Navy (M)">M</button>
+          <button class="size-btn snipcart-add-item"
+            data-item-id="6a50a7203047f7" data-item-price="24.00"
+            data-item-url="https://brbl.app/drop"
+            data-item-image="https://brbl.app/organic-tee-navy.jpg"
+            data-item-name="BRBL Organic Cotton Tee — French Navy (L)">L</button>
+          <button class="size-btn snipcart-add-item"
+            data-item-id="6a50a720304817" data-item-price="24.00"
+            data-item-url="https://brbl.app/drop"
+            data-item-image="https://brbl.app/organic-tee-navy.jpg"
+            data-item-name="BRBL Organic Cotton Tee — French Navy (XL)">XL</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="copy2">The list gets first access to future drops and colourways.</p>
+
   <form action="https://formsubmit.co/douggscott99@gmail.com" method="POST">
     <input type="hidden" name="_subject" value="BRBL DROP 001 list"/>
     <input type="hidden" name="_captcha" value="false"/>
     <input type="email" name="email" placeholder="your@email.com" required/>
-    <button type="submit">First access</button>
+    <button type="submit">Join the list</button>
   </form>
+
 </main>
+
+<!-- Snipcart — LIVE MODE -->
+<link rel="preconnect" href="https://app.snipcart.com" />
+<link rel="preconnect" href="https://cdn.snipcart.com" />
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.css" />
+<div hidden id="snipcart" data-config-modal-style="side"
+  data-api-key="N2ZhMTU4MmMtMWUzZi00YWZiLTg4ZjMtYjE2OWM3YmU3ODQ3NjM5MTkzMTMzNTkwMDg2NDc0">
+</div>
+<script async src="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.js"></script>
+
 <footer>© 2026 BRBL · Made in Scotland</footer>
 </body>
 </html>
